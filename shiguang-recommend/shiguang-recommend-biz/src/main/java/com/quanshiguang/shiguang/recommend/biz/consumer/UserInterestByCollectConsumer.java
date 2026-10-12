@@ -14,6 +14,7 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.search.fetch.subphase.FetchSourceContext;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import com.quanshiguang.framework.common.constant.SharedMQConstants;
 
 import java.io.IOException;
 import java.util.Map;
@@ -25,8 +26,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 @RocketMQMessageListener(
-        consumerGroup = "shiguang_recommend_group_CollectUnCollectTopic",
-        topic = "CollectUnCollectTopic"
+        consumerGroup = "shiguang_recommend_group_" + SharedMQConstants.TOPIC_COLLECT_OR_UN_COLLECT,
+        topic = SharedMQConstants.TOPIC_COLLECT_OR_UN_COLLECT
 )
 @Slf4j
 public class UserInterestByCollectConsumer implements RocketMQListener<String> {

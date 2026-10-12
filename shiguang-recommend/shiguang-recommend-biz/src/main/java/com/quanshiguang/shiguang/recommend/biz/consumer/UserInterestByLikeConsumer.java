@@ -1,5 +1,6 @@
 package com.quanshiguang.shiguang.recommend.biz.consumer;
 
+
 import com.quanshiguang.framework.common.util.JsonUtils;
 import com.quanshiguang.shiguang.recommend.biz.constant.RedisKeyConstants;
 import com.quanshiguang.shiguang.recommend.biz.model.dto.LikeUnlikeNoteMqDTO;
@@ -13,6 +14,7 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import com.quanshiguang.framework.common.constant.SharedMQConstants;
 
 import java.io.IOException;
 import java.util.Map;
@@ -24,8 +26,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 @RocketMQMessageListener(
-        consumerGroup = "shiguang_recommend_group_LikeUnlikeTopic",
-        topic = "LikeUnlikeTopic"
+        consumerGroup = "shiguang_recommend_group_" + SharedMQConstants.TOPIC_COUNT_NOTE_LIKE,
+        topic = SharedMQConstants.TOPIC_LIKE_OR_UNLIKE
 )
 @Slf4j
 public class UserInterestByLikeConsumer implements RocketMQListener<String> {

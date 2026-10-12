@@ -41,7 +41,7 @@ public class DelayDeleteNoteRedisCacheConsumer implements RocketMQListener<Strin
             // 删除 Redis 笔记缓存
             String noteDetailRedisKey = RedisKeyConstants.buildNoteDetailKey(noteId);
             // 删除个人主页 - 已发布笔记列表缓存
-            String publishedNoteListRedisKey = RedisKeyConstants.buildPublishedNoteListKey(noteId);
+            String publishedNoteListRedisKey = RedisKeyConstants.buildPublishedNoteListKey(userId);
             // 批量删除
             redisTemplate.delete(Arrays.asList(noteDetailRedisKey, publishedNoteListRedisKey));
         } catch (Exception e) {

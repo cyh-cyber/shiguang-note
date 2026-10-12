@@ -1,4 +1,5 @@
 package com.quanshiguang.shiguang.kv.biz.constant;
+import com.quanshiguang.framework.common.constant.SharedMQConstants;
 
 /**
  * @author: 犬小哈
@@ -6,11 +7,8 @@ package com.quanshiguang.shiguang.kv.biz.constant;
  * @version: v1.0.0
  * @description: TODO
  **/
-public interface MQConstants {
+public interface MQConstants extends SharedMQConstants{
 
-    /**
-     * Topic: 发布笔记事务消息
-     */
-    String TOPIC_PUBLISH_NOTE_TRANSACTION = "PublishNoteTransactionTopic";
+
 
 }

@@ -1,4 +1,5 @@
 package com.quanshiguang.shiguang.count.biz.constant;
+import com.quanshiguang.framework.common.constant.SharedMQConstants;
 
 /**
  * @author: 犬小哈
@@ -6,17 +7,8 @@ package com.quanshiguang.shiguang.count.biz.constant;
  * @version: v1.0.0
  * @description: MQ 常量
  **/
-public interface MQConstants {
+public interface MQConstants extends SharedMQConstants{
 
-    /**
-     * Topic: 关注数计数
-     */
-    String TOPIC_COUNT_FOLLOWING = "CountFollowingTopic";
-
-    /**
-     * Topic: 粉丝数计数
-     */
-    String TOPIC_COUNT_FANS = "CountFansTopic";
 
     /**
      * Topic: 粉丝数计数入库
@@ -29,16 +21,6 @@ public interface MQConstants {
     String TOPIC_COUNT_FOLLOWING_2_DB = "CountFollowing2DBTopic";
 
     /**
-     * Topic: 计数 - 笔记点赞数
-     */
-    String TOPIC_COUNT_NOTE_LIKE = "CountNoteLikeTopic";
-
-    /**
-     * Topic: 计数 - 笔记收藏数
-     */
-    String TOPIC_COUNT_NOTE_COLLECT = "CountNoteCollectTopic";
-
-    /**
      * Topic: 计数 - 笔记点赞数落库
      */
     String TOPIC_COUNT_NOTE_LIKE_2_DB = "CountNoteLike2DBTTopic";
@@ -47,21 +29,6 @@ public interface MQConstants {
      * Topic: 计数 - 笔记收藏数落库
      */
     String TOPIC_COUNT_NOTE_COLLECT_2_DB = "CountNoteCollect2DBTTopic";
-
-    /**
-     * Topic: 笔记评论总数计数
-     */
-    String TOPIC_COUNT_NOTE_COMMENT = "CountNoteCommentTopic";
-
-    /**
-     * Topic: 笔记操作（发布、删除）
-     */
-    String TOPIC_NOTE_OPERATE = "NoteOperateTopic";
-
-    /**
-     * Topic: 评论热度值更新
-     */
-    String TOPIC_COMMENT_HEAT_UPDATE = "CommentHeatUpdateTopic";
 
     /**
      * Topic: 评论点赞数更新
@@ -73,14 +40,6 @@ public interface MQConstants {
      */
     String TOPIC_COUNT_COMMENT_LIKE_2_DB = "CountCommentLike2DBTTopic";
 
-    /**
-     * Tag 标签：笔记发布
-     */
-    String TAG_NOTE_PUBLISH = "publishNote";
 
-    /**
-     * Tag 标签：笔记删除
-     */
-    String TAG_NOTE_DELETE = "deleteNote";
 
 }

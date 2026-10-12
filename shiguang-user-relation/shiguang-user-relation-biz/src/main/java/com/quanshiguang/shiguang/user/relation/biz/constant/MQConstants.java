@@ -1,4 +1,5 @@
 package com.quanshiguang.shiguang.user.relation.biz.constant;
+import com.quanshiguang.framework.common.constant.SharedMQConstants;
 
 /**
  * @author: 犬小哈
@@ -6,22 +7,13 @@ package com.quanshiguang.shiguang.user.relation.biz.constant;
  * @version: v1.0.0
  * @description: MQ 常量
  **/
-public interface MQConstants {
+public interface MQConstants extends SharedMQConstants{
 
     /**
      * Topic: 关注、取关共用一个
      */
     String TOPIC_FOLLOW_OR_UNFOLLOW = "FollowUnfollowTopic";
 
-    /**
-     * Topic: 关注数计数
-     */
-    String TOPIC_COUNT_FOLLOWING = "CountFollowingTopic";
-
-    /**
-     * Topic: 粉丝数计数
-     */
-    String TOPIC_COUNT_FANS = "CountFansTopic";
 
     /**
      * 关注标签

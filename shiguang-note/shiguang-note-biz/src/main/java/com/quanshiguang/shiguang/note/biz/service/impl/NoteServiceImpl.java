@@ -352,7 +352,7 @@ public class NoteServiceImpl implements NoteService {
         // 并发查询优化
         // RPC: 调用用户服务
         CompletableFuture<FindUserByIdRspDTO> userResultFuture = CompletableFuture
-                .supplyAsync(() -> userRpcService.findById(userId), threadPoolTaskExecutor);
+                .supplyAsync(() -> userRpcService.findById(noteDO.getCreatorId()), threadPoolTaskExecutor);
 
         // RPC: 调用 K-V 存储服务获取内容
         CompletableFuture<String> contentResultFuture = CompletableFuture.completedFuture(null);
