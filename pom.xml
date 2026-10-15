@@ -50,6 +50,8 @@
         <module>shiguang-agent</module>
         <!-- 性能压测基准 -->
         <module>shiguang-benchmark</module>
+        <!-- 内容风控中心（Kafka + Elasticsearch） -->
+        <module>shiguang-moderation</module>
     </modules>
 
     <properties>

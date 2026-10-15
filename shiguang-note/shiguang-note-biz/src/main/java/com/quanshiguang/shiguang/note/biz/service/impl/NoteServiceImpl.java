@@ -332,7 +332,8 @@ public class NoteServiceImpl implements NoteService {
 
         // 若 Redis 缓存中获取不到，则走数据库查询
         // 查询笔记
-        NoteDO noteDO = noteDOMapper.selectByPrimaryKey(noteId);
+        NoteDO noteDO = noteDOMapper
+                .selectByPrimaryKey(noteId);
 
         // 若该笔记不存在，则抛出业务异常
         if (Objects.isNull(noteDO)) {

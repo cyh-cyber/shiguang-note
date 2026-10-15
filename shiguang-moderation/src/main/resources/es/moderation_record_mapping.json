@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "refresh_interval": "5s"
+  },
+  "mappings": {
+    "properties": {
+      "event_id":     { "type": "keyword" },
+      "content_id":   { "type": "long" },
+      "content_type": { "type": "keyword" },
+      "author_id":    { "type": "long" },
+      "content":      { "type": "text", "analyzer": "ik_max_word", "search_analyzer": "ik_smart" },
+      "hit_words":    { "type": "keyword" },
+      "rule_codes":   { "type": "keyword" },
+      "decision":     { "type": "keyword" },
+      "risk_score":   { "type": "integer" },
+      "create_time":  { "type": "date", "format": "yyyy-MM-dd HH:mm:ss||epoch_millis" }
+    }
+  }
+}

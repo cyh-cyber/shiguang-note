@@ -1,0 +1,21 @@
+spring:
+  data:
+    redis:
+      database: 1
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      timeout: 5s
+      connect-timeout: 5s
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:127.0.0.1:9092}
+
+elasticsearch:
+  address: ${ES_ADDRESS:127.0.0.1:9200}
+
+moderation:
+  rule:
+    max-length: 2000
+    review-score: 10
+    reject-score: 30
+  sensitive-word-file: classpath:sensitive-words.txt
